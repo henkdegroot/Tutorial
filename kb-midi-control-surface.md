@@ -14,7 +14,7 @@ The process will be similar for Linux (this also requires JACK and a2jmidid), wh
 2. You need an audio device with ASIO support or you can use a universal ASIO driver like ASIO4ALL.
 3. You need a MIDI Control Surface. Many different models are available. I am using a Worlde EasyControl 9.
  ![worlde-easycontrol-9](https://user-images.githubusercontent.com/13550012/152056661-a446f24e-0598-4164-bc0f-a2510ab33c5e.png)
-4. JACK for Winodws [get it from the JACK audio page](https://jackaudio.org/downloads/).
+4. JACK for Windows [get it from the JACK audio page](https://jackaudio.org/downloads/).
 
 ### What do you need to know?
 You need to know the MIDI Control Change numbers which are assigned to the buttons/faders/knobs of your MIDI Control Surface device. For the device I use, the setup is:
@@ -70,10 +70,10 @@ The mixing section of my device contains 9 faders, 9 knobs and 9 buttons. As I o
 - The knobs section starts with CC# 14 and ends with CC# 22.
 - The button sections starts with CC# 23 and ends with CC# 31.
 
-We need to tell Jamulus that these Control Change numbers are being used. When the Control Change is sent, it will also sent a value for the CC. The value will be in the range from 0 till 127.
-The fader at the zero position will sent value 0 and at the max. position it will sent value 127.
-The knob rotate and will sent 0 when turned fully to the left, 64 when in top centre and 127 when turned fully to the right.
-The button will sent OFF (0 value) or ON (127 value).
+We need to tell Jamulus that these Control Change numbers are being used. When the Control Change is send, it will also send a value for the CC. The value will be in the range from 0 till 127.
+The fader at the zero position will send value 0 and at the max. position it will send value 127.
+The knob will send 0 when turned fully to the left, 64 when in top centre and 127 when turned fully to the right.
+The button will send OFF (0 value) or ON (127 value).
 
 The option we need to use for Jamulus is: **--ctrlmidich**
 
@@ -115,7 +115,7 @@ You notice that there is an extra connect option available for Jamulus, which in
 
 *NOTE: This is only available when the --ctrlmidich option is used when starting Jamulus.*
 
-Use the mouse and click the "System Midi Capture_1" and drag this to the "Jamulus input midi" connector.
+Use the mouse and click on "System Midi Capture_1" and drag this to the "Jamulus input midi" connector.
 This will allow the MIDI signals to be sent from the MIDI device to Jamulus.
 
 ![QjackCtl-connect-midi](https://user-images.githubusercontent.com/13550012/152057248-b089ab04-72b6-4340-a5d1-2500a9938dd9.png)
